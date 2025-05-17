@@ -2,6 +2,8 @@
 
 This index lists all self-contained articles in the repository along with metadata for organization, reuse, and reference.
 
+[2024 Archive](./archive/2024/)
+
 | Title | Folder | SEO Title | SEO Description | Summary | Related | Tags |
 |-------|--------|------------|------------------|---------|---------|------|
 | How I Use AI in UX Prototyping | [ai-in-ux-prototyping](./ai-in-ux-prototyping/) | AI in UX Prototyping | Practical AI usage for improving UX design workflows | Using GPT-4 to generate, critique, and iterate on wireframes and concepts | — | UX, AI, workflow |
