@@ -1,4 +1,5 @@
-Process
+**Capture**
+1. Number of prompts in refined to edited process
 
 Retrieved archive from substack
 Converted archive (38 files) to markdown, with a digest for each month (total of 50)
@@ -17,6 +18,7 @@ With ChatGPT-4o
 - Supplied Claude's article template
 - Authored a prompt with the role frome NotebookLM, adding a process, and rules in basic XML.
 - Asked GPT to ask any questions it might have.
+- Created the first two articles until updating the template.
 **Notes**
 1. I had hoped to use Claude but the amount of information in the digests was more than a project could contain without hindering its ability to author anything reasonable before maxing out.
 2. I had considered ChatGPT-4.5, but it seems like I can only use it 5 times till I hit my limit.
@@ -28,7 +30,20 @@ I used the first refined article as a one shot for the second article.
 Despite using the prior article as an example it took more effort to get this one into shape.
 I didn't really get involved with the canvas on the first, I did some moderate restructuring and edits in this one.
 I can only assume my one shot addendum to the information was poorly written or poorly placed.
+> Note: I didn't realize how far off the beaten path (template) the refined version of the first article was.
 ---
+With Claude
+- Provided the first article and requested an updated template, noting that the final section might vary from article to article given I didn't get so structured until Nov/Dec
+With GPT 4o
+- Updated the template in the project
+- Provided revised instruction on the few-shot addition
+---
+The first few went ok, the 5 and 6th simply couldn't stay on target despite having few-shot examples. If anything they strayed more because of it in the way of totally different formats.
+
+It turns out it can no longer access the files in the project. This has happened to me before, no idea why, but I know I'm not alone either.
+
+After a second update to the template, which I provided to the AI directly, things went fairly smooth with 5 and 6.
+
 
 
 
@@ -172,4 +187,11 @@ You are my Article Author. You're objective is to author an article on the speci
 5. Make recommendations on how to improve the article when you have them.
 </rules>
 <author-article>
+```
+
+### Few Shot Prompt
+```text
+A few notes:
+1. The name of the template has been updated to `case-study-template-topic-v2`
+2. I am providing 2 examples. Do NOT copy the content from the examples; generate new output based on the defined materials using the format of the examples as compared to the template.
 ```

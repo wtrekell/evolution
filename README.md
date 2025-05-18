@@ -1,10 +1,3 @@
-Thanks for the details and the upload. With your **pipeline diagram**, **publishing platforms**, and the content from your `quiet-evolution.md` document, we can now create a complete and tailored top-level `README.md` that reflects the identity and goals of your repository.
-
----
-
-## ✅ Complete `README.md`
-
-
 # Quiet Evolution Repository
 
 This repository supports the Quiet Evolution publication, a project exploring practical and ethical applications of AI in design and technical workflows. It serves as both a content archive and a research log — tracking the evolution of ideas, documenting experiments, and publishing results.

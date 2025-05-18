@@ -1,49 +1,100 @@
 # [TOPIC]: From [Starting Point] to [Advanced State]
 
-[150-200 word introduction summarizing the experimental approach to this prompt element throughout the year, highlighting the progression and key discoveries]
+[150-200 word introduction summarizing the experimental approach to this prompt element throughout the year. Write as 2-3 paragraphs with 3-5 sentences each. Use plain text without formatting for this section.]
 
 ## Challenge
 
-[150-200 words defining the specific problems addressed in experimentation with this prompt element. Why was this element important? What inconsistencies or limitations were you trying to overcome?]
+[150-200 words defining the specific problems addressed in experimentation with this prompt element. Format as 2-3 paragraphs with clear topic sentences. No bullet points or special formatting in this section.]
 
 ## Experiments & Evidence
 
 ### Approach
 
-[200-250 words outlining the general methodology used to test this element, including:
-- Overall testing philosophy
-- Key metrics and evaluation methods
-- Cross-model considerations
-- How variables were isolated
-- Evolution of testing methods throughout the year]
+[Format as 1-2 paragraphs followed by a bullet list of key methodological principles]
+
+* **[Principle 1]:** [Brief explanation]
+* **[Principle 2]:** [Brief explanation]
+* **[Principle 3]:** [Brief explanation]
+* **[Principle 4]:** [Brief explanation]
+
+[Add a brief transition paragraph introducing the chronological or thematic experiment breakdowns that follow]
 
 ### [Month/Theme]: [Brief Description]
 
-[For each significant experiment or evolutionary stage in your research, include:
-- Brief description of the test setup
-- Key variables manipulated
-- Notable results and observations
-- How these findings informed subsequent tests]
+[1-2 paragraphs describing the experimental setup and key questions explored]
 
-[Repeat this section structure for each major experiment or milestone throughout the year]
+[Add specific results as a paragraph or bulleted list depending on complexity]
+
+* [Result 1]
+* [Result 2]
+* [Result 3]
+
+[Conclude with 1 paragraph explaining implications for future experiments]
+
+[Repeat this section structure for 4-6 major experiments throughout the year]
 
 ## Findings
 
-[For each major category of findings, create a subsection with bullet points of key insights. Categories will vary by topic but might include:
-- Output Quality
-- Consistency
-- Model-Specific Behaviors
-- Efficiency/Complexity Tradeoffs
-- etc.]
+### [Finding Category 1]
+
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
+
+### [Finding Category 2]
+
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
+
+### [Finding Category 3]
+
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
+* [Key finding with specific evidence]
 
 ## Framework
 
-[300-400 words describing any systematic frameworks, taxonomies, or classification systems developed. Include tables where appropriate to organize concepts. Structure this based on your findings - not all topics will use the same four-digit system.]
+[1-2 paragraph introduction explaining the framework's purpose and structure]
+
+### [Framework Component 1]
+
+| Code | Description | Best Use Cases |
+| ---- | ----------- | -------------- |
+| 1    | [Description] | [Use cases] |
+| 2    | [Description] | [Use cases] |
+| 3    | [Description] | [Use cases] |
+| 4    | [Description] | [Use cases] |
+
+### [Framework Component 2]
+
+| Code | Description | Best Use Cases |
+| ---- | ----------- | -------------- |
+| 1    | [Description] | [Use cases] |
+| 2    | [Description] | [Use cases] |
+| 3    | [Description] | [Use cases] |
+| 4    | [Description] | [Use cases] |
+
+[Add 1-2 paragraphs explaining how to use the framework, including examples:]
+
+* **[Code example]**: [Brief explanation of what this produces]
+* **[Code example]**: [Brief explanation of what this produces]
 
 ## Implications & Recommendations
 
-[200-300 words outlining practical takeaways and guidance for implementing findings. Include specific recommendations and best practices.]
+[1-2 paragraph overview of key implications]
+
+**Recommendations:**
+
+* [Specific recommendation with rationale]
+* [Specific recommendation with rationale]
+* [Specific recommendation with rationale]
+* [Specific recommendation with rationale]
 
 ## Next Steps
 
-[100-150 words identifying future research directions, open questions, and potential applications.]
+[Format as a bullet list of 3-5 future research directions or open questions]
+
+* [Next step/future direction]
+* [Next step/future direction]
+* [Next step/future direction]
