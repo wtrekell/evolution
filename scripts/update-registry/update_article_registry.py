@@ -43,7 +43,8 @@ def load_metadata(yml_path):
         return yaml.safe_load(f)
 
 def append_index_row(f, title, folder_name, summary):
-    f.write(f"| {title} | [{folder_name}](./{folder_name}/) | {summary} | - |\\n")
+    f.write(f"| {title} | [{folder_name}](./{folder_name}/) | {summary} | - |\n")
+
 
 def append_timeline_entry(f, year, month, date, title, folder_name, summary):
     f.write(f"\n## {year}\n\n### {month}\n")
