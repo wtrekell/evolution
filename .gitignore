@@ -3,3 +3,4 @@ admin/
 articles/*/stages/
 
 *.pxd
+*.zip

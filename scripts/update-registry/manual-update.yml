@@ -1,0 +1,22 @@
+name: Update Article Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install markdown beautifulsoup4 pyyaml
+
+      - name: Run update script
+        run: python scripts/update_article_registry.py
