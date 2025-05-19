@@ -19,4 +19,5 @@ jobs:
         run: pip install markdown beautifulsoup4 pyyaml
 
       - name: Run update script
-        run: python scripts/update_article_registry.py
+        run: python scripts/update-registry/update_article_registry.py
+        

@@ -20,3 +20,4 @@ jobs:
 
       - name: Run update script
         run: python scripts/update-registry/update_article_registry.py
+        
