@@ -1,0 +1,131 @@
+# articles.toml
+
+[[article_type]]
+id = "lightweight_thought_piece"
+name = "Lightweight Thought Piece"
+description = "A concise, reflective post—non-controversial and approachable, ideal for sharing an insight, observation, or lesson."
+modules = [
+    "hook",
+    "tldr",
+    "orientation",
+    "main_idea",
+    "takeaway",
+    "cta",
+    "resources",
+    "references"
+]
+
+[[article_type]]
+id = "thought_leadership"
+name = "Thought Leadership Article"
+description = "Structured argument or perspective advancing a unique insight, supported by context, evidence, counterpoints, and practical implications."
+modules = [
+    "hook",
+    "tldr",
+    "orientation",
+    "context_background",
+    "core_argument",
+    "supporting_evidence",
+    "counterarguments",
+    "practical_implications",
+    "conclusion",
+    "cta",
+    "resources",
+    "references"
+]
+
+[[article_type]]
+id = "experiment_article"
+name = "Experiment Article"
+description = "Transparent documentation of an experiment—setup, process, results, analysis, and practical implications."
+modules = [
+    "hook",
+    "tldr",
+    "orientation",
+    "background_setup",
+    "methodology",
+    "results_observations",
+    "analysis_insights",
+    "limitations_considerations",
+    "ethical_considerations",
+    "conclusion",
+    "cta",
+    "resources",
+    "references"
+]
+
+[[article_type]]
+id = "factual_explainer"
+name = "Factual / Explainer Article"
+description = "A clear, matter-of-fact explanation or technical reference (e.g., 'This is XML'), focused on helping the reader understand a subject or concept."
+modules = [
+    "hook",
+    "tldr",
+    "orientation",
+    "what_is",
+    "why_it_matters",
+    "basic_structure",
+    "examples",
+    "common_use_cases",
+    "pitfalls",
+    "resources",
+    "references"
+]
+
+[[article_type]]
+id = "step_by_step_guide"
+name = "Step-by-Step Guide"
+description = "A process-driven, how-to article guiding readers through a workflow, tool, or framework with clear, numbered instructions."
+modules = [
+    "hook",
+    "tldr",
+    "orientation",
+    "who_this_guide_is_for",
+    "what_youll_need",
+    "user_mental_model_alignment",
+    "step_by_step_instructions",
+    "expected_outcomes_verification",
+    "common_pitfalls_solutions",
+    "variations_extensions",
+    "takeaway",
+    "cta",
+    "resources",
+    "references"
+]
+
+# ----- MODULE DESCRIPTIONS -----
+[module_desc]
+hook = "Brief, attention-grabbing opener to set context and engage the reader."
+tldr = "A concise, standalone summary of the article’s topic and key value."
+orientation = "High-level framing—what the piece is about, why it matters, and who it's for."
+main_idea = "The core reflection, insight, or observation—heart of a lightweight thought piece."
+takeaway = "Memorable closing thought, lesson, or open question."
+cta = "Invitation for reader engagement—comments, feedback, or sharing."
+resources = "Curated, optional further reading or tool recommendations."
+references = "Sources, citations, or works directly referenced in the article."
+context_background = "Situates the topic in its industry, historical, or situational context."
+core_argument = "Central thesis, perspective, or assertion—the main point of the article."
+supporting_evidence = "Data, real-world examples, or expert opinions backing up the argument."
+counterarguments = "Addresses credible alternative viewpoints or objections."
+practical_implications = "Translates argument into action, forecasts, or strategic guidance."
+conclusion = "Summarizes and closes the piece, often with a forward-looking statement."
+background_setup = "The 'why this experiment?'—problem statement, challenge, or curiosity."
+methodology = "Step-by-step account of how the experiment was conducted."
+results_observations = "Raw or summarized outcomes of the experiment, presented neutrally."
+analysis_insights = "Interpretation and meaning of the results—what they tell us."
+limitations_considerations = "Clear outline of experiment constraints or open questions."
+ethical_considerations = "Transparency, bias, or responsible practice notes."
+what_is = "Definition and introduction to the subject or concept."
+why_it_matters = "Explains the relevance or practical importance of the subject."
+basic_structure = "Core parts, components, or anatomy of the subject (e.g., XML tags)."
+examples = "Illustrative code, data, or real-world samples."
+common_use_cases = "Frequent or important ways the subject is used."
+pitfalls = "Common mistakes, confusions, or warnings relevant to the subject."
+who_this_guide_is_for = "Clarifies intended reader or user segment."
+what_youll_need = "Checklist of tools, accounts, or prerequisites for a guide."
+user_mental_model_alignment = "Connects the process to reader’s existing experience."
+step_by_step_instructions = "Numbered steps to achieve the article’s outcome."
+expected_outcomes_verification = "Describes what successful completion looks like."
+common_pitfalls_solutions = "Troubleshooting: common errors and how to fix them."
+variations_extensions = "Optional adaptations or extensions of the core process."
+

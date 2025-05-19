@@ -8,56 +8,28 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Folder & Manifest Layout](#folder--manifest-layout)
-3. [Stage-by-Stage Roles](#stage-by-stage-roles)
-4. [Model Mapping & Token Budgets](#model-mapping--token-budgets)
-5. [End-to-End Workflow (GUI-Only)](#end-to-end-workflow-gui-only)
-6. [Validation & Handoff Checklist](#validation--handoff-checklist)
-7. [Platform Feature Shortcuts](#platform-feature-shortcuts)
-8. [Bias / Contamination Controls](#bias--contamination-controls)
-9. [Reference Docs & Static Assets](#reference-docs--static-assets)
-10. [Change Log](#change-log)
+2. [Roles](#roles)
+3. [Model Mapping & Token Budgets](#model-mapping--token-budgets)
+4. [End-to-End Workflow (GUI-Only)](#end-to-end-workflow-gui-only)
+5. [Bias / Contamination Controls](#bias--contamination-controls)
+6. [Change Log](#change-log)
 
 ---
 
 ## Overview
 
-The pipeline is **nine sequential stages** managed manually through web-chat UIs.
-Each stage writes its own deliverables into `stages/<stage>/`, accompanied by a TOML manifest.
+The pipeline minions are an experiment in agent-like workflows using the web UI of AI models.
+
 You copy-paste pre-built ROCC prompt sheets into the relevant model, save the files it returns, commit in Sublime Merge, and move on.
 
-```text
-Ideation → Research → Conceptualize → Experiment → Analyze
-       → Multimodal → Authoring → Edit → Repurpose → Schedule → Follow-up
+```mermaid
+flowchart LR
+    Ideation --> Research --> Conceptualize --> Experiment --> Analyze --> Multimodal --> Authoring --> Edit --> Repurpose --> Schedule --> Follow_up[Follow-up]
 ```
 
 ---
 
-## Folder & Manifest Layout
-
-```
-article-slug/
-├─ personal-brand/00-support-items/
-│  ├─ brand-tone_20250322_v1.md
-│  └─ brand-foundation_20250322_v1.md
-└─ stages/
-   ├─ conceptualize/   conceptualize.toml   concept_notes.*
-   ├─ analysis/        analysis.toml        design.json  …
-   ├─ multimodal/      multimodal.toml      interview_transcript.md
-   ├─ author/          author.toml          draft.md  refined.md
-   ├─ editor/          editor.toml          edited.md change_log.md
-   ├─ repurpose/       repurpose.toml       medium_blurbs.md …
-   ├─ schedule/        schedule.toml
-   └─ followup/        followup.toml
-```
-
-* **One manifest per stage**
-* All files under 20 MB (UI upload safe)
-* `cited_sources` array required even if empty
-
----
-
-## Stage-by-Stage Roles
+## Roles
 
 | Stage              | Role Name                   | Primary Model                   | Key Outputs                                                |
 | ------------------ | --------------------------- | ------------------------------- | ---------------------------------------------------------- |
@@ -71,6 +43,9 @@ article-slug/
 | Schedule           | **Scheduler**               | any fast model                  | `schedule.toml`                                            |
 | Follow-up          | **Responder**               | any fast model                  | `followup.toml`                                            |
 
+* **One manifest per stage**
+* All files under 20 MB (UI upload safe)
+* `cited_sources` array required even if empty
 ---
 
 ## Model Mapping & Token Budgets
@@ -105,26 +80,6 @@ All exchanges happen in web-chat tabs; files are copied into the repo tree.
 
 ---
 
-## Validation & Handoff Checklist
-
-See `VALIDATION_CHECKLIST.md` in the template pack.
-Key rule: upstream role ends chat with
-`HANDOFF → Ready for <next-stage>  Files: …`
-Down-stream prompt begins with manifest validation chunk.
-
----
-
-## Platform Feature Shortcuts
-
-| Stage                | Helper              | Benefit                              |
-| -------------------- | ------------------- | ------------------------------------ |
-| Experiment → Analyze | **OpenAI Projects** | Shared JSON + data without re-upload |
-| Multimodal           | **Custom GPT**      | DALL·E + Code Interpreter, sandboxed |
-| Editor               | **Gemini Gem**      | Handles >100 k-token docs via Drive  |
-| Author               | **Claude Memories** | Auto-inject tone/boundaries          |
-
----
-
 ## Bias / Contamination Controls
 
 * Separate chat sessions per role
@@ -132,17 +87,6 @@ Down-stream prompt begins with manifest validation chunk.
 * Manifest-only context ingestion
 * Human review after Editor stage
 * Optional Perplexity + NotebookLM fact-check loop
-
----
-
-## Reference Docs & Static Assets
-
-| File                              | Purpose                           |
-| --------------------------------- | --------------------------------- |
-| `brand-tone_20250322_v1.md`       | Voice & style guidance            |
-| `brand-foundation_20250322_v1.md` | Mission, boundaries, ethics       |
-| Prompt-kit ZIP                    | All ROCC sheets + JSON variables  |
-| Template ZIP                      | Folder skeleton + blank manifests |
 
 ---
 
