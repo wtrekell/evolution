@@ -10,6 +10,9 @@ base_dir = Path("articles")
 index_path = base_dir / "README.md"
 timeline_path = Path("timeline.md")
 
+def sanitize_md(text):
+    return text.replace("|", "\\|")
+
 def extract_title_and_summary(md_path):
     with open(md_path, "r", encoding="utf-8") as f:
         html = markdown.markdown(f.read())
@@ -33,18 +36,20 @@ def extract_title_and_summary(md_path):
 def get_existing_folders(index_file):
     if not index_file.exists():
         return set()
-    with open(index_file, "r") as f:
+    with open(index_file, "r", encoding="utf-8") as f:
         return {line.split("|")[2].split("]")[0].strip() for line in f if line.startswith("|")}
 
 def load_metadata(yml_path):
     if not yml_path.exists():
         return {}
-    with open(yml_path, "r") as f:
+    with open(yml_path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 def append_index_row(f, title, folder_name, summary):
+    title = sanitize_md(title)
+    folder_name = sanitize_md(folder_name)
+    summary = sanitize_md(summary)
     f.write(f"| {title} | [{folder_name}](./{folder_name}/) | {summary} | - |\n")
-
 
 def append_timeline_entry(f, year, month, date, title, folder_name, summary):
     f.write(f"\n## {year}\n\n### {month}\n")
@@ -84,12 +89,13 @@ def generate_article_readme(folder_path, title, summary, meta, article_file):
 - [Article Index](../README.md)
 - [Timeline](../../timeline.md)
 """
-    (folder_path / "README.md").write_text(content)
+    (folder_path / "README.md").write_text(content, encoding="utf-8")
 
 existing_folders = get_existing_folders(index_path)
 
 new_entries = []
 timeline_updates = {}
+
 for folder in base_dir.iterdir():
     if not folder.is_dir() or folder.name in existing_folders:
         continue
@@ -123,6 +129,9 @@ if new_entries:
 
 # Append timeline entries
 if timeline_updates:
+    if not timeline_path.exists():
+        timeline_path.write_text("", encoding="utf-8")
     with open(timeline_path, "a", encoding="utf-8") as f:
         for (year, month), entries in timeline_updates.items():
-            append_timeline_entry(f, year, month, *entries[0])
+            for date, title, folder_name, summary in entries:
+                append_timeline_entry(f, year, month, date, title, folder_name, summary)
