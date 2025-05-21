@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "name": "Generate README.md",
+  "description": "OCR a screenshot of a GitHub repo overview plus an arbitrary folder tree to produce a `README.md` with: repository header, publication links, a hard-coded navigation section, the folder header and description, a contents tree, dynamic subfolder links (showing their absolute paths), license, and last-updated date.",
+  "inputSpec": [
+    {
+      "name": "screenshot",
+      "type": "image",
+      "description": "Screenshot of the repository header, navigation bar, and a target folder tree"
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "readmeMarkdown",
+      "type": "markdown",
+      "description": "The fully assembled `README.md`"
+    }
+  ],
+  "steps": [
+    "1. Perform OCR on `screenshot`, preserving all text and fenced code blocks verbatim.",
+    "2. Extract the repository title and introductory text; assign to `repositoryTitle` and `repositoryDescription`.",
+    "3. Extract publication links (e.g. Substack, Medium) in markdown link format; assign to `publicationLinks`.",
+    "4. Use the following hard-coded navigation (no OCR needed):\n   ```\n   * [Article Index](./articles/README.md) – List of all articles with metadata\n   * [Timeline](./timeline.md) – Chronological log of published articles\n   * [Templates](./templates/) – Markdown and prompt templates\n   * [Scripts](./scripts/) – Utilities for automation and formatting\n   * [Resources](./resources/) – Research links, PDFs, notes\n   * [LICENSE](./LICENSE)\n   ```",
+    "5. Detect the target folder name and its description line; assign to `folderName` and `folderDescription`.",
+    "6. Extract the ASCII tree under that folder and assign verbatim to `folderTree`.",
+    "7. Enumerate each immediate subfolder `subfolderName` under `folderName`. For each, create a markdown bullet:\n   `* [subfolderName/](./folderName/subfolderName/) – /folderName/subfolderName/`\n   Combine these into `section2List`.",
+    "8. Extract the license text and link; assign to `licenseText`.",
+    "9. Extract the `Last updated:` date; assign to `lastUpdated`.",
+    "10. Inject all placeholders into the template and validate the final markdown syntax."
+  ],
+  "template": {
+    "sections": [
+      {
+  "content": "# Quiet Evolution Repository\n\nThis repository supports the Quiet Evolution publication, a project exploring practical and ethical applications of AI in design and technical workflows. It serves as both a content archive and a research log — tracking the evolution of ideas, documenting experiments, and publishing results.\n\nVisit the publication:\n- Substack: [quietevolution.substack.com](https://quietevolution.substack.com)\n- Medium: [@trekell](https://medium.com/@trekell)\n\n---"
+      },
+      {
+        "content": "# {{folderName}}/\n"
+      },
+      {
+        "heading": "## Contents",
+        "content": "{{section2List}}"
+      },
+      {
+        "heading": "### Structure",
+        "content": "```plaintext\n{{= folderTree.replace(/\\n\\s*\\n/g, '\\n') }}\n```"
+      },
+      {
+        "content": "\n---"
+      },
+      {
+        "content": "## Navigation\n\n* [articles/](./articles/)\n* [ai usage policy/](./ai-usage-policy/)\n* [prompts/](./prompts/)\n* [scripts/](./scripts/)\n* [templates/](./templates/)\n* [LICENSE](./LICENSE)\n* [README.md](./README.md)\n\n---"
+      },
+      {
+        "content": "\n---"
+      },
+      {
+        "content": "\n---\n## License\n\n{{licenseText}}\n\n---\nLast updated: {{= new Date().toISOString().split('T')[0] }}"
+      }
+    ]
+  }
+}
